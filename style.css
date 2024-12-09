@@ -1,0 +1,130 @@
+/* Basisstijlen */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B3E5FC; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #81D4FA; 
+    color: #0288D1;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigatie */
+nav {
+    background-color: #FFF59D; 
+}
+
+nav ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline; 
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #0288D1; 
+    text-decoration: none; 
+    font-size: 18px;
+}
+
+
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #0288D1; 
+}
+
+/* Slider */
+.slider {
+    display: flex; 
+    overflow: hidden; 
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.slider img {
+    width: 100%;
+    max-width: 800px; /
+    margin: 0 10px;
+    border-radius: 8px; 
+}
+
+
+.cities {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.city {
+    background-color: #FFFFFF; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    width: 45%; 
+    box-sizing: border-box; 
+}
+
+.city h3 {
+    margin-top: 0;
+    color: #0288D1; 
+}
+
+
+form {
+    max-width: 500px; /
+    margin: 0 auto; 
+    background-color: #FFFFFF; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+form label {
+    display: block; 
+    margin-bottom: 8px;
+    color: #333;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+}
+
+form button {
+    background-color: #FFF59D; 
+    color: #0288D1; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+form button:hover {
+    background-color: #FFEB3B; 
+}
+
+
+footer {
+    text-align: center; 
+    padding: 20px;
+    background-color: #FFF59D; 
+    color: #0288D1; 
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europedia</title>
+    <!-- Verwijst naar het CSS-bestand voor de styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    // bovenkant van website
+    <header>
+        <h1>Welkom bij Europedia</h1>
+        <p>De mooiste steden van Europa</p>
+    </header>
+
+    //navigatiebalk
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bestemmingen">Bestemmingen</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#overons">Over Ons</a></li>
+        </ul>
+    </nav>
+
+    //homepagina
+    <section id="home">
+        <h2>Ontdek Europa</h2>
+        <div class="slider">
+            <!-- Afbeeldingen voor de slider -->
+            <img src="https://monohydric.com/content/images/1b5d4dcb.png" alt="Rome">
+            <img src="https://cdn.bajabikes.eu/blog/wp-content/uploads/2023/10/26171107/bezienswaardigheden-Parijs.jpg" alt="Parijs">
+            <img src="https://lp-cms-production.imgix.net/2024-05/GettyImages-2154447062-16.9.jpg?w=1440&h=810&fit=crop&auto=format&q=75" alt="Amsterdam">
+        </div>
+    </section>
+
+    //bestemmingen
+    <section id="bestemmingen">
+        <h2>Bestemmingen</h2>
+        <label for="filter">Filter steden:</label>
+        <select id="filter">
+            <option value="history">Geschiedenis</option>
+            <option value="price">Prijs</option>
+            <option value="museum">Alfabet</option>
+        </select>
+
+        //steden tonen
+        <div class="cities">
+            <div class="city" id="amsterdam">
+                <h3>Amsterdam</h3>
+                <p>De stad van kanalen, musea en een rijke geschiedenis.</p>
+            </div>
+            <div class="city" id="paris">
+                <h3>Parijs</h3>
+                <p>De stad van de liefde en de iconische Eiffeltoren.</p>
+            </div>
+            <div class="city" id="rome">
+                <h3>Rome</h3>
+                <p>De stad van het Romeinse cultuur en architectuur.</p>
+            </div>
+            <div class="city" id="berlijn">
+                <h3>Berlijn</h3>
+                <p>Een stad waar veel mogelijk is en geschiedenis leeft.</p>
+            </div>
+        </div>
+    </section>
+
+    //contact formulier
+    <section id="contact">
+        <h2>Neem contact op</h2>
+        <form>
+            <label for="name">Naam:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="message">Bericht:</label>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit">Verstuur</button>
+        </form>
+    </section>
+
+    //over Ons
+    <section id="overons">
+        <h2>Over Europedia</h2>
+        <p>Europedia helpt reizigers om de mooiste steden van Europa te ontdekken met tips over wat je kunt doen, waar je kunt eten, en meer!</p>
+    </section>
+
+    // de voet van de site
+    <footer>
+        <p>&copy; 2024 Europedia</p>
+    </footer>
+
+    //JavaScript 
+    <script>
+    // Slider 
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slider img');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    // showt de eerste afbeelding
+    showSlide(currentIndex);
+
+    // Verandert de afbeelding elke 3 seconden
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }, 3000);
+
+    // Filteren van alle steden
+    document.getElementById('filter').addEventListener('change', function () {
+        const selectedFilter = this.value; // Haal het gekozen filter op
+        const cities = document.querySelectorAll('.city');
+
+        cities.forEach(city => {
+            // Tonen of verbergen van steden op basis van defilter
+            if (selectedFilter === 'history' && city.id !== 'paris') {
+                city.style.display = 'none';
+            } else if (selectedFilter === 'price' && city.id !== 'amsterdam') {
+                city.style.display = 'none';
+            } else if (selectedFilter === 'museum' && city.id !== 'rome') {
+                city.style.display = 'none';
+            } else {
+                city.style.display = 'block';
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
